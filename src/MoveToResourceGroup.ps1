@@ -10,6 +10,12 @@ terraform import azurerm_key_vault_secret.k8s_ssh_key_private_pem https://cloudr
 terraform import azurerm_key_vault_secret.k8s_ssh_key_public_openssh https://cloudrulerkvidentity.vault.azure.net/secrets/k8s-ssh-key-public-openssh/46138acb9a4849df9e9c981f2e7cf0df
 terraform import azurerm_key_vault_secret.k8s_ssh_key_public_pem https://cloudrulerkvidentity.vault.azure.net/secrets/k8s-ssh-key-public-pem/f6a3bc21f4fd4775894201c798ebd40a
 
+
+$source = "C:\Users\brian\git\cloudruler\infrastructure\sandbox\.terraform\providers\registry.terraform.io\hashicorp\azurerm\2.50.0\windows_amd64\"
+md = ""
+$destination = C:\Users\brian\git\cloudruler\infrastructure\sandbox\.terraform\providers\registry.terraform.io\hashicorp\azurerm\2.50.0\windows_amd64\terraform-provider-azurerm_v2.50.0_x5.exe
+mklink /H  $destination
+
 terraform import 
 
 data.azuread_users.keyvault_admin_users

@@ -23,4 +23,3 @@ process {
     ForEach-Object { ConvertFrom-SecureString $_.SecretValue } | 
     Out-File -FilePath $filePath
 }
-

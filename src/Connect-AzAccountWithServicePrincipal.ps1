@@ -8,12 +8,16 @@ param(
     $Secret,
     [Parameter(Mandatory=$true)]
     [string]
-    $TenantId
+    $TenantId,
+    [Parameter(Mandatory=$true)]
+    [string]
+    $SubscriptionName
 )
 process {
 
     $pscredential = New-Object -TypeName System.Management.Automation.PSCredential($ApplicationId, (ConvertTo-SecureString $Secret -AsPlainText -Force))
-    Connect-AzureAD -Credential $pscredential -Tenant $TenantId
+    Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $TenantId -Subscription $SubscriptionName
+
 }
 
 
